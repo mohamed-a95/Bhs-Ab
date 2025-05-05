@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#f3f4f6" />
+  
+  <!-- Station Wagon / Kombi Car - Volvo V60 Style -->
+  <g transform="translate(100, 150)">
+    <!-- Car body -->
+    <path d="M80,250 C60,200 100,150 160,150 L520,150 C550,150 580,200 580,250 L520,340 C510,350 490,350 480,350 L180,350 C170,350 150,350 140,340 L80,250 Z" fill="#0284c7" />
+    
+    <!-- Windows -->
+    <path d="M160,150 L150,200 L210,200 L220,150 Z" fill="#dbeafe" />
+    <path d="M240,150 L230,200 L330,200 L340,150 Z" fill="#dbeafe" />
+    <path d="M360,150 L350,200 L450,200 L460,150 Z" fill="#dbeafe" />
+    <path d="M480,150 L470,200 L530,200 L520,150 Z" fill="#dbeafe" />
+    
+    <!-- Front and back details -->
+    <path d="M80,250 L70,260 L90,280 L130,280 L140,250 Z" fill="#0369a1" />
+    <path d="M500,250 L490,280 L560,280 L580,260 L570,250 Z" fill="#0369a1" />
+    
+    <!-- Lights -->
+    <rect x="90" y="255" width="30" height="15" rx="5" fill="#fef3c7" />
+    <rect x="550" y="255" width="30" height="15" rx="5" fill="#fef3c7" />
+    
+    <!-- Wheels -->
+    <circle cx="160" cy="320" r="40" fill="#1f2937" />
+    <circle cx="160" cy="320" r="25" fill="#6b7280" />
+    <circle cx="490" cy="320" r="40" fill="#1f2937" />
+    <circle cx="490" cy="320" r="25" fill="#6b7280" />
+    
+    <!-- Door handles -->
+    <rect x="200" y="230" width="20" height="5" rx="2" fill="#d1d5db" />
+    <rect x="340" y="230" width="20" height="5" rx="2" fill="#d1d5db" />
+    <rect x="480" y="230" width="20" height="5" rx="2" fill="#d1d5db" />
+    
+    <!-- Roof rails -->
+    <line x1="180" y1="150" x2="500" y2="150" stroke="#0369a1" stroke-width="5" />
+    <line x1="180" y1="145" x2="500" y2="145" stroke="#0369a1" stroke-width="5" />
+    
+    <!-- Volvo-style logo on front -->
+    <circle cx="110" cy="230" r="15" fill="#d1d5db" stroke="#6b7280" stroke-width="2" />
+    <line x1="110" y1="220" x2="110" y2="240" stroke="#6b7280" stroke-width="3" />
+    <line x1="100" y1="230" x2="120" y2="230" stroke="#6b7280" stroke-width="3" />
+  </g>
+  
+  <text x="400" y="520" font-family="Arial" font-size="24" text-anchor="middle" fill="#374151">Volvo V60 Kombi eller liknande</text>
+</svg>

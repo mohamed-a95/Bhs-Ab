@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#f3f4f6" />
+  
+  <!-- Road -->
+  <rect x="0" y="450" width="800" height="150" fill="#374151" />
+  <g>
+    <rect x="50" y="525" width="100" height="12" fill="white" />
+    <rect x="200" y="525" width="100" height="12" fill="white" />
+    <rect x="350" y="525" width="100" height="12" fill="white" />
+    <rect x="500" y="525" width="100" height="12" fill="white" />
+    <rect x="650" y="525" width="100" height="12" fill="white" />
+  </g>
+  
+  <!-- Delivery Truck -->
+  <g transform="translate(100, 50)">
+    <!-- Truck Cabin -->
+    <rect x="50" y="300" width="150" height="120" rx="10" fill="#2563eb" />
+    <rect x="70" y="320" width="80" height="60" rx="5" fill="#dbeafe" /> <!-- Windshield -->
+    
+    <!-- Truck Body -->
+    <rect x="200" y="280" width="400" height="140" fill="#2563eb" />
+    <rect x="200" y="280" width="400" height="20" fill="#1d4ed8" /> <!-- Top edge -->
+    <rect x="550" y="300" width="50" height="25" rx="5" fill="#f3f4f6" /> <!-- Tail light -->
+    
+    <!-- BHS Logo on side -->
+    <rect x="300" y="310" width="200" height="80" fill="white" stroke="#1d4ed8" stroke-width="2" />
+    <text x="350" y="360" font-family="Arial" font-weight="bold" font-size="36" text-anchor="middle" fill="#2563eb">BHS</text>
+    <text x="400" y="390" font-family="Arial" font-size="16" fill="#2563eb">TRANSPORT</text>
+    
+    <!-- Wheels -->
+    <circle cx="125" cy="440" r="30" fill="#1f2937" />
+    <circle cx="125" cy="440" r="15" fill="#6b7280" />
+    <circle cx="250" cy="440" r="30" fill="#1f2937" />
+    <circle cx="250" cy="440" r="15" fill="#6b7280" />
+    <circle cx="450" cy="440" r="30" fill="#1f2937" />
+    <circle cx="450" cy="440" r="15" fill="#6b7280" />
+    <circle cx="550" cy="440" r="30" fill="#1f2937" />
+    <circle cx="550" cy="440" r="15" fill="#6b7280" />
+  </g>
+  
+  <!-- Skyline silhouette -->
+  <path d="M0,450 L50,450 L70,400 L100,430 L130,380 L160,450 L200,350 L230,450 L270,420 L300,450 L350,350 L380,450 L420,400 L450,450 L500,380 L530,450 L580,420 L600,380 L650,450 L700,400 L730,450 L800,450" fill="#0f172a" />
+  
+  <text x="400" y="550" font-family="Arial" font-size="24" text-anchor="middle" fill="white">Leverans och transport över hela Sverige</text>
+</svg>
