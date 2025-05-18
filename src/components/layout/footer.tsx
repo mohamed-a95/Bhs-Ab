@@ -9,9 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="bg-white text-primary font-bold text-xl px-3 py-2 rounded">
-                BHS
-              </div>
+              <img
+                src="/images/Bhslogo.jpeg"
+                alt="BHS logotyp"
+                className="h-12 w-auto object-contain bg-white rounded"
+              />
               <span className="font-semibold">Bil & Flytthjälp Service</span>
             </div>
             <p className="text-neutral-400 mb-6">
@@ -209,7 +211,6 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 mr-3 mt-1 text-neutral-400 flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -235,7 +236,6 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 mr-3 text-neutral-400 flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -257,7 +257,6 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 mr-3 text-neutral-400 flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
