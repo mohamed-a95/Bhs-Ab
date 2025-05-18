@@ -10,7 +10,7 @@ const MobileMenu = ({ isOpen, onClose, currentPath }: MobileMenuProps) => {
   return (
     <div
       className={`md:hidden overflow-hidden transition-all duration-300 ${
-        isOpen ? "max-h-96" : "max-h-0"
+        isOpen ? "max-h-screen" : "max-h-0"
       }`}
     >
       <nav className="flex flex-col space-y-4 py-4 pb-8">
