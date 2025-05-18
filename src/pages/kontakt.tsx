@@ -107,7 +107,7 @@ const Kontakt = () => {
       )}
 
       {/* Banner */}
-      <section className="bg-primary bg-opacity-95 text-white py-12">
+      <section className="bg-gray-200 bg-opacity-95 text-neutral-600 py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Kontakta oss</h1>
           <p className="text-lg opacity-90">

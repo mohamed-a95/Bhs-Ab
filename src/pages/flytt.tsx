@@ -1,16 +1,26 @@
 import { Link } from "wouter";
-import { Calendar, Package, Sofa, Shield, Check, X } from "lucide-react";
+import { Calendar, Package, Sofa, Shield, Check } from "lucide-react";
 import { getImagePath } from "../assets/index";
 
 const Flytt = () => {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-primary bg-opacity-95 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Flytthjälp</h1>
-            <p className="text-lg opacity-90">
+      {/* Hero Section with Background Image and Overlay */}
+      <section className="relative min-h-[60vh] flex items-center justify-center text-white">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('/images/Chatgptflytt.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
+
+        <div className="relative z-20 container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Flytthjälp</h1>
+            <p className="text-lg md:text-xl text-white/90">
               Vi erbjuder professionell flytthjälp för både hem och kontor. Våra
               erfarna flyttare tar hand om hela processen.
             </p>
@@ -21,16 +31,6 @@ const Flytt = () => {
       {/* Moving Services Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          {/* <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-700 mb-2">
-              Flytthjälp
-            </h2>
-            <p className="text-neutral-500 max-w-2xl mx-auto">
-              Vi erbjuder professionell flytthjälp för både hem och kontor. Våra
-              erfarna flyttare tar hand om hela processen.
-            </p>
-          </div> */}
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <h3 className="text-2xl font-semibold text-neutral-700 mb-4">
@@ -126,48 +126,22 @@ const Flytt = () => {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                <div className="bg-neutral-50 p-4 rounded-lg">
-                  <div className="flex items-center">
+                {[
+                  "Flyttprojektets omfattning",
+                  "Antal rum och möbler",
+                  "Flyttsträcka",
+                  "Packnings- och bärtjänster",
+                  "Behov av specialtransport",
+                  "Önskad försäkringsnivå",
+                ].map((text, index) => (
+                  <div
+                    key={index}
+                    className="bg-neutral-50 p-4 rounded-lg flex items-center"
+                  >
                     <Check className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="font-medium">
-                      Flyttprojektets omfattning
-                    </span>
+                    <span className="font-medium">{text}</span>
                   </div>
-                </div>
-                <div className="bg-neutral-50 p-4 rounded-lg">
-                  <div className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="font-medium">Antal rum och möbler</span>
-                  </div>
-                </div>
-                <div className="bg-neutral-50 p-4 rounded-lg">
-                  <div className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="font-medium">Flyttsträcka</span>
-                  </div>
-                </div>
-                <div className="bg-neutral-50 p-4 rounded-lg">
-                  <div className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="font-medium">
-                      Packnings- och bärtjänster
-                    </span>
-                  </div>
-                </div>
-                <div className="bg-neutral-50 p-4 rounded-lg">
-                  <div className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="font-medium">
-                      Behov av specialtransport
-                    </span>
-                  </div>
-                </div>
-                <div className="bg-neutral-50 p-4 rounded-lg">
-                  <div className="flex items-center">
-                    <Check className="h-5 w-5 text-green-500 mr-2" />
-                    <span className="font-medium">Önskad försäkringsnivå</span>
-                  </div>
-                </div>
+                ))}
               </div>
 
               <div className="text-center">
@@ -202,33 +176,31 @@ const Flytt = () => {
             Vanliga frågor om flytthjälp
           </h2>
 
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="font-semibold text-lg text-neutral-700 mb-2">
-                  Hur lång tid i förväg bör jag boka flytthjälp?
-                </h3>
-                <p className="text-neutral-600">
-                  Vi rekommenderar att du bokar flytthjälp minst 2-3 veckor i
-                  förväg för att säkerställa tillgänglighet, särskilt under
-                  månadsskiften som är extra populära flyttdagar.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="font-semibold text-lg text-neutral-700 mb-2">
-                  Vad ingår i grundförsäkringen?
-                </h3>
-                <p className="text-neutral-600">
-                  Vår grundförsäkring täcker skador på möbler och gods under
-                  transporten upp till ett värde av 500 000 kr.
-                  Premium-försäkringen utökar skyddet och har en högre
-                  beloppsgräns.
-                </p>
-              </div>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="font-semibold text-lg text-neutral-700 mb-2">
+                Hur lång tid i förväg bör jag boka flytthjälp?
+              </h3>
+              <p className="text-neutral-600">
+                Vi rekommenderar att du bokar flytthjälp minst 2–3 veckor i
+                förväg för att säkerställa tillgänglighet, särskilt under
+                månadsskiften som är extra populära flyttdagar.
+              </p>
             </div>
 
-            <div className="mt-8 text-center">
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="font-semibold text-lg text-neutral-700 mb-2">
+                Vad ingår i grundförsäkringen?
+              </h3>
+              <p className="text-neutral-600">
+                Vår grundförsäkring täcker skador på möbler och gods under
+                transporten upp till ett värde av 500 000 kr.
+                Premium-försäkringen utökar skyddet och har en högre
+                beloppsgräns.
+              </p>
+            </div>
+
+            <div className="text-center pt-4">
               <Link
                 href="/kontakt"
                 className="bg-primary text-white font-medium px-6 py-3 rounded-md hover:bg-blue-700 transition inline-block"
