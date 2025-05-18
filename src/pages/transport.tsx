@@ -23,7 +23,7 @@ const Transport = () => {
       {/* Transport Services Section */}
       <section className="py-16 bg-neutral-100">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          {/*<div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-neutral-700 mb-2">
               Transport
             </h2>
@@ -31,7 +31,7 @@ const Transport = () => {
               Vi erbjuder transportlösningar för både privatpersoner och
               företag, från mindre leveranser till större godstransporter.
             </p>
-          </div>
+          </div>*/}
 
           {/* Transport Truck Image */}
           <div className="mb-12 flex justify-center">
