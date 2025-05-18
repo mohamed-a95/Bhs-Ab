@@ -2,13 +2,24 @@ import { Link } from "wouter";
 import { CarFront, PackageCheck } from "lucide-react";
 import ServiceCard from "../components/service-card";
 import { getImagePath } from "../assets/index";
+import img1 from "../assets/images/ChatGPT Image 17 maj 2025 14_20_11.png";
 
 const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-section text-white">
-        <div className="container mx-auto px-4 py-16 md:py-24">
+      <section
+        className="hero-section relative text-white bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "url('/images/ChatGPT Image 17 maj 2025 14_20_11.png')", // ändra till rätt sökväg
+        }}
+      >
+        {/* Mörk overlay */}
+        <div className="absolute inset-0 bg-black/60 z-0" />
+
+        {/* Innehåll */}
+        <div className="relative z-10 container mx-auto px-4 py-16 md:py-24">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Din pålitliga partner för

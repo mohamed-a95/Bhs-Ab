@@ -18,14 +18,14 @@ const Priser = () => {
       {/* Pricing Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          {/*<div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-neutral-700 mb-2">
               Prislista
             </h2>
             <p className="text-neutral-500 max-w-2xl mx-auto">
               Transparenta priser utan dolda avgifter för alla våra tjänster.
             </p>
-          </div>
+          </div>*/}
 
           <PricingTabs />
         </div>

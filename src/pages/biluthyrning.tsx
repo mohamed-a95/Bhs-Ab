@@ -143,7 +143,7 @@ const Biluthyrning = () => {
               </div>
             </div>
 
-            <div className="mt-12">
+            {/*<div className="mt-12">
               <h2 className="text-2xl font-bold text-neutral-700 mb-6 text-center">
                 Snabböversikt - Personbilar och Minibussar
               </h2>
@@ -162,7 +162,7 @@ const Biluthyrning = () => {
               <div className="mt-8">
                 <RentalTable />
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
       </section>

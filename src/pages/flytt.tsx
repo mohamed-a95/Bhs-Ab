@@ -21,7 +21,7 @@ const Flytt = () => {
       {/* Moving Services Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          {/* <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-neutral-700 mb-2">
               Flytthjälp
             </h2>
@@ -29,7 +29,7 @@ const Flytt = () => {
               Vi erbjuder professionell flytthjälp för både hem och kontor. Våra
               erfarna flyttare tar hand om hela processen.
             </p>
-          </div>
+          </div> */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             <div>
