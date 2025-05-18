@@ -13,7 +13,7 @@ const MobileMenu = ({ isOpen, onClose, currentPath }: MobileMenuProps) => {
         isOpen ? "max-h-96" : "max-h-0"
       }`}
     >
-      <nav className="flex flex-col space-y-4 py-4">
+      <nav className="flex flex-col space-y-4 py-4 pb-4">
         <Link
           href="/"
           className={`font-medium px-4 py-2 rounded mx-4 block ${
