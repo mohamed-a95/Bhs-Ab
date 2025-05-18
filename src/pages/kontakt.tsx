@@ -39,6 +39,8 @@ const contactFormSchema = z.object({
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
+const FORM_ENDPOINT = "https://formspree.io/f/xzzroleb";
+
 const Kontakt = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -55,33 +57,40 @@ const Kontakt = () => {
     },
   });
 
-  const generateMailtoLink = (data: ContactFormValues): string => {
-    const subject = encodeURIComponent(`Förfrågan: ${data.service}`);
-    const body = encodeURIComponent(
-      `Namn: ${data.name}\n` +
-        `E-post: ${data.email}\n` +
-        `Telefon: ${data.phone}\n` +
-        `Tjänst: ${data.service}\n\n` +
-        `Meddelande:\n${data.message}`
-    );
-    return `mailto:moe222aa@gmail.com?subject=${subject}&body=${body}`;
-  };
-
-  const handleContactSubmit = (data: ContactFormValues) => {
+  const handleContactSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          service: data.service,
+          message: data.message,
+          _captcha: false,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
       toast({
         title: "Tack för din förfrågan!",
-        description: "Öppnar din e-postklient...",
+        description: "Ditt meddelande har skickats.",
       });
-      const mailtoLink = generateMailtoLink(data);
-      window.open(mailtoLink, "_blank");
       form.reset();
-      window.location.href = "/";
+
+      // Redirect after a short delay
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 3000);
     } catch (error) {
       toast({
         title: "Något gick fel",
-        description: "Kunde inte öppna e-postklienten.",
+        description: "Kunde inte skicka meddelandet.",
         variant: "destructive",
       });
     } finally {
@@ -113,6 +122,7 @@ const Kontakt = () => {
                 className="space-y-6"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Name, Email, Phone fields unchanged */}
                   <FormField
                     control={form.control}
                     name="name"
@@ -172,16 +182,21 @@ const Kontakt = () => {
                         <FormControl>
                           <Select
                             value={field.value}
-                            onChange={(e) => field.onChange(e.target.value)}
-                            defaultValue=""
+                            onValueChange={field.onChange}
                           >
-                            <option value="" disabled>
-                              Välj en tjänst
-                            </option>
-                            <option value="biluthyrning">Biluthyrning</option>
-                            <option value="flytt">Flytt</option>
-                            <option value="transport">Transport</option>
-                            <option value="ovrigt">Övrigt</option>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Välj en tjänst" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="biluthyrning">
+                                Biluthyrning
+                              </SelectItem>
+                              <SelectItem value="flytt">Flytt</SelectItem>
+                              <SelectItem value="transport">
+                                Transport
+                              </SelectItem>
+                              <SelectItem value="ovrigt">Övrigt</SelectItem>
+                            </SelectContent>
                           </Select>
                         </FormControl>
                         <FormMessage />
@@ -190,6 +205,7 @@ const Kontakt = () => {
                   />
                 </div>
 
+                {/* Message and Terms fields unchanged */}
                 <FormField
                   control={form.control}
                   name="message"
@@ -273,11 +289,8 @@ const Kontakt = () => {
                 <div>
                   <p className="font-medium">E-post</p>
                   <p>
-                    <a
-                      href="mailto:moe222aa@gmail.com"
-                      className="hover:text-primary"
-                    >
-                      moe222aa@gmail.com
+                    <a href="mailto:info@bhs.se" className="hover:text-primary">
+                      info@bhs.se
                     </a>
                   </p>
                 </div>
