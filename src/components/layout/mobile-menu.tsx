@@ -82,7 +82,7 @@ const MobileMenu = ({ isOpen, onClose, currentPath }: MobileMenuProps) => {
         </Link>
         <a
           href="tel:+46704562100"
-          className="flex items-center bg-secondary text-white px-4 py-2 rounded-md hover:bg-[#d62f3c] transition mx-4 mb-6"
+          className="flex items-center bg-secondary text-white px-4 py-2 rounded-md hover:bg-[#d62f3c] transition mx-4 mb-8"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
