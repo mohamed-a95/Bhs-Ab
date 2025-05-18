@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useToast } from "../lib/hooks/use-toast";
@@ -15,8 +15,9 @@ import { Input } from "../components/input";
 import { Textarea } from "../components/textarea";
 import { Checkbox } from "../components/checkbox";
 import { Button } from "../components/button";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Loader, Phone, Mail, MapPin, Clock } from "lucide-react";
 
+// Schemat för formuläret
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Namnet måste vara minst 2 tecken" }),
   email: z.string().email({ message: "Ogiltig e-postadress" }),
@@ -51,6 +52,11 @@ const Kontakt = () => {
 
   const handleContactSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
+    // Toast som indikerar att skickning pågår
+    toast({
+      title: "Skickar din förfrågan...",
+    });
+
     try {
       const response = await fetch(FORM_ENDPOINT, {
         method: "POST",
@@ -70,10 +76,12 @@ const Kontakt = () => {
         }),
       });
       const result = await response.json();
+
       if (response.ok && result.ok) {
         toast({
           title: "Tack för din förfrågan!",
           description: "Ditt meddelande har skickats.",
+          variant: "success",
         });
         form.reset();
         setTimeout(() => (window.location.href = "/"), 3000);
@@ -83,7 +91,7 @@ const Kontakt = () => {
     } catch {
       toast({
         title: "Något gick fel",
-        description: "Kunde inte skicka meddelandet.",
+        description: "Kunde inte skicka ditt meddelande.",
         variant: "destructive",
       });
     } finally {
@@ -128,6 +136,7 @@ const Kontakt = () => {
                       </FormItem>
                     )}
                   />
+
                   <FormField
                     control={form.control}
                     name="email"
@@ -145,6 +154,7 @@ const Kontakt = () => {
                       </FormItem>
                     )}
                   />
+
                   <FormField
                     control={form.control}
                     name="phone"
@@ -162,6 +172,7 @@ const Kontakt = () => {
                       </FormItem>
                     )}
                   />
+
                   <FormField
                     control={form.control}
                     name="service"
@@ -186,6 +197,7 @@ const Kontakt = () => {
                     )}
                   />
                 </div>
+
                 <FormField
                   control={form.control}
                   name="message"
@@ -203,6 +215,7 @@ const Kontakt = () => {
                     </FormItem>
                   )}
                 />
+
                 <FormField
                   control={form.control}
                   name="terms"
@@ -228,16 +241,25 @@ const Kontakt = () => {
                     </FormItem>
                   )}
                 />
+
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full md:w-auto"
+                  className="w-full md:w-auto flex items-center justify-center"
                 >
-                  {isSubmitting ? "Skickar..." : "Skicka förfrågan"}
+                  {isSubmitting ? (
+                    <>
+                      <Loader className="mr-2 h-5 w-5 animate-spin" />
+                      Skickar...
+                    </>
+                  ) : (
+                    "Skicka förfrågan"
+                  )}
                 </Button>
               </form>
             </Form>
           </div>
+
           <div className="bg-white rounded-lg shadow-md p-8">
             <h2 className="text-xl font-semibold text-neutral-700 mb-4">
               Kontaktuppgifter
@@ -285,6 +307,7 @@ const Kontakt = () => {
           </div>
         </div>
       </section>
+
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-neutral-700 mb-8">
@@ -292,7 +315,7 @@ const Kontakt = () => {
           </h2>
           <div className="h-[400px] rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.7889342695702!2d18.06894691587071!3d59.33441318165847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5bca429619%3A0x8e80fc99e8d6dea!2sStockholm%2C%20Sweden!5e0!3m2!1sehen!2sse!4v1629988397615!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.7889342695702!2d18.06894691587071!3d59.33441318165847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5bca429619%3A0x8e80fc99e8d6dea!2sStockholm%2C%20Sweden!5e0!3m2!1sen!2sus!4v1629988397615!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}
