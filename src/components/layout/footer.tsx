@@ -14,7 +14,7 @@ const Footer = () => {
                 alt="BHS logotyp"
                 className="h-12 w-auto object-contain bg-white rounded"
               />
-              <span className="font-semibold">Bil & Flytthjälp Service</span>
+              {/* <span className="font-semibold">Bil & Flytthjälp Service</span>*/}
             </div>
             <p className="text-neutral-400 mb-6">
               Din partner för biluthyrning, flytt och transport i Stockholm
