@@ -52,7 +52,8 @@ const Kontakt = () => {
 
   const onSubmit = form.handleSubmit(async (data) => {
     setIsSubmitting(true);
-    // Info-toast när vi påbörjar sändningen
+
+    // Overlay med spinner och dimma
     toast({ title: "Skickar din förfrågan..." });
 
     try {
@@ -79,13 +80,10 @@ const Kontakt = () => {
         toast({
           title: "Tack för din förfrågan!",
           description: "Ditt meddelande har skickats.",
-          variant: "success", // Grön toast
+          variant: "success",
         });
         form.reset();
-        // Redirect efter 3 sek
-        setTimeout(() => {
-          window.location.href = "/";
-        }, 3000);
+        setTimeout(() => (window.location.href = "/"), 3000);
       } else {
         throw new Error(result.error || "Fel vid formulärskick");
       }
@@ -93,15 +91,22 @@ const Kontakt = () => {
       toast({
         title: "Något gick fel",
         description: "Kunde inte skicka ditt meddelande.",
-        variant: "destructive", // Röd toast
+        variant: "destructive",
       });
-    } finally {
-      setIsSubmitting(false);
     }
   });
 
   return (
     <>
+      {/* Overlay vid skickning */}
+      {isSubmitting && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex flex-col items-center justify-center z-50">
+          <Loader className="animate-spin h-16 w-16 text-white" />
+          <p className="mt-4 text-white text-lg">Skickar din förfrågan...</p>
+        </div>
+      )}
+
+      {/* Banner */}
       <section className="bg-primary bg-opacity-95 text-white py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Kontakta oss</h1>
@@ -112,6 +117,7 @@ const Kontakt = () => {
         </div>
       </section>
 
+      {/* Formulär & info */}
       <section className="py-16 bg-neutral-100">
         <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Formulär */}
@@ -172,7 +178,6 @@ const Kontakt = () => {
                       </FormItem>
                     )}
                   />
-
                   {/* Tjänst */}
                   <FormField
                     control={form.control}
@@ -245,7 +250,7 @@ const Kontakt = () => {
                   )}
                 />
 
-                {/* Skicka-knapp med spinner */}
+                {/* Skicka-knapp */}
                 <Button
                   type="submit"
                   disabled={isSubmitting}
@@ -264,7 +269,7 @@ const Kontakt = () => {
             </Form>
           </div>
 
-          {/* Kontaktuppgifter sidopanel */}
+          {/* Kontaktuppgifter */}
           <div className="bg-white rounded-lg shadow-md p-8">
             <h2 className="text-xl font-semibold text-neutral-700 mb-4">
               Kontaktuppgifter
