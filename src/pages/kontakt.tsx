@@ -17,7 +17,7 @@ import { Checkbox } from "../components/checkbox";
 import { Button } from "../components/button";
 import { Loader, Phone, Mail, MapPin, Clock } from "lucide-react";
 
-// Schemat för formuläret
+// Zod-schema för validering
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Namnet måste vara minst 2 tecken" }),
   email: z.string().email({ message: "Ogiltig e-postadress" }),
@@ -28,7 +28,7 @@ const contactFormSchema = z.object({
     .min(10, { message: "Meddelandet måste vara minst 10 tecken" }),
   terms: z
     .boolean()
-    .refine((val) => val === true, { message: "Du måste godkänna villkoren" }),
+    .refine((v) => v === true, { message: "Du måste godkänna villkoren" }),
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
@@ -50,12 +50,10 @@ const Kontakt = () => {
     },
   });
 
-  const handleContactSubmit = async (data: ContactFormValues) => {
+  const onSubmit = form.handleSubmit(async (data) => {
     setIsSubmitting(true);
-    // Toast som indikerar att skickning pågår
-    toast({
-      title: "Skickar din förfrågan...",
-    });
+    // Info-toast när vi påbörjar sändningen
+    toast({ title: "Skickar din förfrågan..." });
 
     try {
       const response = await fetch(FORM_ENDPOINT, {
@@ -81,10 +79,13 @@ const Kontakt = () => {
         toast({
           title: "Tack för din förfrågan!",
           description: "Ditt meddelande har skickats.",
-          variant: "success",
+          variant: "success", // Grön toast
         });
         form.reset();
-        setTimeout(() => (window.location.href = "/"), 3000);
+        // Redirect efter 3 sek
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 3000);
       } else {
         throw new Error(result.error || "Fel vid formulärskick");
       }
@@ -92,12 +93,12 @@ const Kontakt = () => {
       toast({
         title: "Något gick fel",
         description: "Kunde inte skicka ditt meddelande.",
-        variant: "destructive",
+        variant: "destructive", // Röd toast
       });
     } finally {
       setIsSubmitting(false);
     }
-  };
+  });
 
   return (
     <>
@@ -113,16 +114,15 @@ const Kontakt = () => {
 
       <section className="py-16 bg-neutral-100">
         <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Formulär */}
           <div className="lg:col-span-2 bg-white rounded-lg shadow-md p-8">
             <h2 className="text-2xl font-semibold text-neutral-700 mb-6">
               Skicka förfrågan
             </h2>
             <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(handleContactSubmit)}
-                className="space-y-6"
-              >
+              <form onSubmit={onSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Namn */}
                   <FormField
                     control={form.control}
                     name="name"
@@ -136,7 +136,7 @@ const Kontakt = () => {
                       </FormItem>
                     )}
                   />
-
+                  {/* E-post */}
                   <FormField
                     control={form.control}
                     name="email"
@@ -154,7 +154,7 @@ const Kontakt = () => {
                       </FormItem>
                     )}
                   />
-
+                  {/* Telefon */}
                   <FormField
                     control={form.control}
                     name="phone"
@@ -173,6 +173,7 @@ const Kontakt = () => {
                     )}
                   />
 
+                  {/* Tjänst */}
                   <FormField
                     control={form.control}
                     name="service"
@@ -198,6 +199,7 @@ const Kontakt = () => {
                   />
                 </div>
 
+                {/* Meddelande */}
                 <FormField
                   control={form.control}
                   name="message"
@@ -216,6 +218,7 @@ const Kontakt = () => {
                   )}
                 />
 
+                {/* Villkor */}
                 <FormField
                   control={form.control}
                   name="terms"
@@ -242,6 +245,7 @@ const Kontakt = () => {
                   )}
                 />
 
+                {/* Skicka-knapp med spinner */}
                 <Button
                   type="submit"
                   disabled={isSubmitting}
@@ -260,6 +264,7 @@ const Kontakt = () => {
             </Form>
           </div>
 
+          {/* Kontaktuppgifter sidopanel */}
           <div className="bg-white rounded-lg shadow-md p-8">
             <h2 className="text-xl font-semibold text-neutral-700 mb-4">
               Kontaktuppgifter
@@ -308,6 +313,7 @@ const Kontakt = () => {
         </div>
       </section>
 
+      {/* Karta */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-neutral-700 mb-8">
