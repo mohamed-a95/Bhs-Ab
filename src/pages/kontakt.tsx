@@ -59,34 +59,42 @@ const Kontakt = () => {
 
   const handleContactSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
+
     try {
       const response = await fetch(FORM_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
           name: data.name,
           email: data.email,
           phone: data.phone,
           service: data.service,
           message: data.message,
+          _subject: `Förfrågan: ${data.service}`,
+          _replyto: data.email,
           _captcha: false,
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
+      const result = await response.json();
+
+      if (response.ok && result.ok) {
+        toast({
+          title: "Tack för din förfrågan!",
+          description: "Ditt meddelande har skickats.",
+        });
+        form.reset();
+
+        // Redirect to homepage after 3 seconds
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 3000);
+      } else {
+        throw new Error(result.error || "Fel vid formulärskick");
       }
-
-      toast({
-        title: "Tack för din förfrågan!",
-        description: "Ditt meddelande har skickats.",
-      });
-      form.reset();
-
-      // Redirect after a short delay
-      setTimeout(() => {
-        window.location.href = "/";
-      }, 3000);
     } catch (error) {
       toast({
         title: "Något gick fel",
@@ -122,7 +130,6 @@ const Kontakt = () => {
                 className="space-y-6"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Name, Email, Phone fields unchanged */}
                   <FormField
                     control={form.control}
                     name="name"
@@ -205,7 +212,6 @@ const Kontakt = () => {
                   />
                 </div>
 
-                {/* Message and Terms fields unchanged */}
                 <FormField
                   control={form.control}
                   name="message"
