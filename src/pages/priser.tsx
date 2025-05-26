@@ -32,7 +32,7 @@ const Priser = () => {
       </section>
 
       {/* Additional Information */}
-      <section className="py-16 bg-neutral-100">
+      {/*   <section className="py-16 bg-neutral-100">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold text-neutral-700 mb-6 text-center">
@@ -95,7 +95,7 @@ const Priser = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
     </>
   );
 };

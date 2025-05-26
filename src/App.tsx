@@ -26,6 +26,16 @@ function ScrollToTop() {
 function App() {
   const [location] = useLocation();
 
+  // GTM sidvisning
+  useEffect(() => {
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: "pageview",
+        page: location,
+      });
+    }
+  }, [location]);
+
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex flex-col min-h-screen">

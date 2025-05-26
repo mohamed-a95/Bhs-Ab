@@ -288,7 +288,7 @@ const Kontakt = () => {
                   <p className="font-medium">Telefon</p>
                   <p>
                     <a href="tel:+46704562100" className="hover:text-primary">
-                      070-456 21 00
+                      073-984 50 69
                     </a>
                   </p>
                 </div>
@@ -326,13 +326,14 @@ const Kontakt = () => {
           </h2>
           <div className="h-[400px] rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.7889342695702!2d18.06894691587071!3d59.33441318165847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5bca429619%3A0x8e80fc99e8d6dea!2sStockholm%2C%20Sweden!5e0!3m2!1sen!2sus!4v1629988397615!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8124.421819494206!2d17.98824315742485!3d59.3690056601716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9f124af6a4a7%3A0x3027dd1be4d6acfe!2sHonn%C3%B6rsgatan%206%2C%20170%2069%20Solna!5e0!3m2!1ssv!2sse!4v1716740749317!5m2!1ssv!2sse"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              title="BHS location"
+              title="BHS Hyrbilar & Service"
+              referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
         </div>

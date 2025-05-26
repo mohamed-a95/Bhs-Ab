@@ -170,7 +170,7 @@ const Flytt = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-neutral-100">
+      {/* <section className="py-16 bg-neutral-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-neutral-700 mb-8 text-center">
             Vanliga frågor om flytthjälp
@@ -210,7 +210,7 @@ const Flytt = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
     </>
   );
 };

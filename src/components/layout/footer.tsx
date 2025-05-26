@@ -18,13 +18,14 @@ const Footer = () => {
             </div>
             <p className="text-neutral-400 mb-6">
               Din partner för biluthyrning, flytt och transport i Stockholm
-              sedan 2005.
+              sedan 1998.
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/Bhsbiluthyrning/"
                 className="text-neutral-300 hover:text-white transition"
-                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -42,9 +43,11 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href=" https://www.instagram.com/bhsbiluthyrning/?hl=en"
                 className="text-neutral-300 hover:text-white transition"
                 aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +83,7 @@ const Footer = () => {
                   />
                 </svg>
               </a>
-              <a
+              {/*<a
                 href="#"
                 className="text-neutral-300 hover:text-white transition"
                 aria-label="LinkedIn"
@@ -116,7 +119,7 @@ const Footer = () => {
                     strokeWidth={1.5}
                   />
                 </svg>
-              </a>
+              </a>*/}
             </div>
           </div>
 
@@ -158,7 +161,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          {/*<div>
             <h4 className="font-semibold text-white text-lg mb-4">
               Information
             </h4>
@@ -204,7 +207,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div>*/}
 
           <div>
             <h4 className="font-semibold text-white text-lg mb-4">Kontakt</h4>
@@ -252,7 +255,7 @@ const Footer = () => {
                   href="tel:+46704562100"
                   className="hover:text-white transition"
                 >
-                  070-456 21 00
+                  073-984 50 69
                 </a>
               </li>
               <li className="flex items-center">

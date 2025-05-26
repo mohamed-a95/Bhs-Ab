@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import RentalTable from "../components/rental-table";
 import { getImagePath } from "../assets/index";
+import Priser from "./priser";
 
 const Biluthyrning = () => {
   return (
@@ -56,20 +57,22 @@ const Biluthyrning = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-4">Vårt erbjudande</h2>
+              <h2 className="text-2xl font-bold mb-4">
+                Hyr din bil enkelt och smidigt hos BHS
+              </h2>
               <p className="mb-6">
-                Vårat garage löser de flesta behoven. Vare sig du vill ha en
-                liten personbil för ett snabbt ärende, eller om fotbollslaget
-                behöver en minibuss för en längre resa alt en skåpbil för en
-                flytt. Så finns BHS här för dig. Vi har allt ifrån mindre
-                personbilar till stora flyttbilar.
+                Hyr din bil enkelt och smidigt hos BHS Letar du efter det
+                perfekta fordonet för din resa? Hos BHS hittar du ett brett
+                utbud av moderna och pålitliga bilar som passar alla behov –
+                från familjesemestern och affärsresan till vardagens
+                utmaningar..
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="bg-white rounded-lg shadow-md p-8">
                 <h2 className="text-2xl font-bold mb-4">
-                  Varför ska ni anlita oss?
+                  Hos oss kan du hyra:
                 </h2>
                 <ul className="space-y-4">
                   <li className="flex items-start">
@@ -77,9 +80,18 @@ const Biluthyrning = () => {
                       ✓
                     </span>
                     <div>
-                      <h3 className="font-semibold">Erfarenhet</h3>
+                      <h3 className="font-semibold">Personbilar</h3>
+                      <p>För bekväma resor, både korta och långa.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-primary text-white p-2 rounded-full mr-3 mt-1">
+                      ✓
+                    </span>
+                    <div>
+                      <h3 className="font-semibold">Minibussar</h3>
                       <p>
-                        Vår personal har mångårig erfarenhet inom branschen.
+                        Perfekta för större sällskap eller familjeutflykter.
                       </p>
                     </div>
                   </li>
@@ -88,20 +100,9 @@ const Biluthyrning = () => {
                       ✓
                     </span>
                     <div>
-                      <h3 className="font-semibold">Moderna material</h3>
+                      <h3 className="font-semibold">Skåpbilar</h3>
                       <p>
-                        Vi använder alltid moderna material för effektivitet.
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-primary text-white p-2 rounded-full mr-3 mt-1">
-                      ✓
-                    </span>
-                    <div>
-                      <h3 className="font-semibold">Gott rykte</h3>
-                      <p>
-                        Vi har byggt ett starkt rykte genom god kundservice.
+                        För flyttar, transporter eller andra praktiska behov.
                       </p>
                     </div>
                   </li>
@@ -116,8 +117,11 @@ const Biluthyrning = () => {
                       ✓
                     </span>
                     <div>
-                      <h3 className="font-semibold">Service</h3>
-                      <p>Du får ett företag som bryr sig om sina kunder.</p>
+                      <h3 className="font-semibold">Högkvalitativa bilar</h3>
+                      <p>
+                        Våra fordon är moderna, välskötta och redo för alla
+                        typer av uppdrag.
+                      </p>
                     </div>
                   </li>
                   <li className="flex items-start">
@@ -141,6 +145,7 @@ const Biluthyrning = () => {
                 </ul>
               </div>
             </div>
+            <Priser />
 
             {/* 
             <div className="mt-12">

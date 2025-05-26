@@ -96,8 +96,7 @@ const Home = () => {
             Redo att komma igång?
           </h2>
           <p className="text-neutral-500 max-w-2xl mx-auto mb-8">
-            Kontakta oss idag för att diskutera dina behov eller boka direkt
-            online.
+            Kontakta oss idag för att diskutera dina behov.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link

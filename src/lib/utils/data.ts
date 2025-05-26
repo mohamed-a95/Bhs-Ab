@@ -257,5 +257,5 @@ export const RentalPricing = {
       van: "140 kr"
     }
   ],
-  footerText: "Alla priser är inklusive moms. Självrisk 4000 kr. Körkortstid minst 1 år och minst 20 års ålder."
+  footerText: "Alla priser är inklusive moms. Självrisk 4000 kr."
 };

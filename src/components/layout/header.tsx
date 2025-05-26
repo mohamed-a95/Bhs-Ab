@@ -61,16 +61,6 @@ const Header = ({ currentPath }: HeaderProps) => {
               Biluthyrning
             </Link>
             <Link
-              href="/priser"
-              className={
-                currentPath === "/priser"
-                  ? "text-primary font-medium"
-                  : "text-neutral-600 hover:text-primary font-medium"
-              }
-            >
-              Prislista
-            </Link>
-            <Link
               href="/flytt"
               className={
                 currentPath === "/flytt"
