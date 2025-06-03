@@ -134,7 +134,7 @@ const Header = ({ currentPath }: HeaderProps) => {
 
           {/* Contact Button */}
           <a
-            href="tel:+46704562100"
+            href="tel:+46739845068"
             className="hidden md:flex items-center bg-secondary text-white px-4 py-2 rounded-md hover:bg-[#d62f3c] transition"
           >
             <svg

@@ -252,7 +252,7 @@ const Footer = () => {
                   />
                 </svg>
                 <a
-                  href="tel:+46704562100"
+                  href="tel:+46739845068"
                   className="hover:text-white transition"
                 >
                   073-984 50 68
