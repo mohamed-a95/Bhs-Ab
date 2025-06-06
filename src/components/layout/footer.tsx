@@ -151,12 +151,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
+                {/*<Link
                   href="/priser"
                   className="text-neutral-400 hover:text-white transition"
                 >
                   Prislista
-                </Link>
+                </Link>*/}
               </li>
             </ul>
           </div>
