@@ -6,13 +6,15 @@ import { useEffect } from "react";
 const Tack = () => {
   const [, setLocation] = useLocation();
 
-  useEffect(() => {
+  {
+    /*useEffect(() => {
     const timeout = setTimeout(() => {
       setLocation("/");
-    }, 8000); // Redirect efter 8 sekunder
+    }); // Redirect efter 8 sekunder
 
     return () => clearTimeout(timeout);
-  }, [setLocation]);
+  }, [setLocation]);*/
+  }
 
   return (
     <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-white">
