@@ -83,7 +83,7 @@ const Kontakt = () => {
           variant: "success",
         });
         form.reset();
-        setTimeout(() => (window.location.href = "/"), 3000);
+        setTimeout(() => (window.location.href = "/tack"), 3000);
       } else {
         throw new Error(result.error || "Fel vid formulärskick");
       }

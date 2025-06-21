@@ -11,6 +11,7 @@ import Transport from "./pages/transport";
 import Priser from "./pages/priser";
 import Kontakt from "./pages/kontakt";
 import NotFound from "./pages/not-found";
+import Tack from "./pages/tack";
 
 // Auto-scroll to top when changing pages
 function ScrollToTop() {
@@ -49,6 +50,8 @@ function App() {
             <Route path="/transport" component={Transport} />
             <Route path="/priser" component={Priser} />
             <Route path="/kontakt" component={Kontakt} />
+            <Route path="/tack" component={Tack} />
+
             <Route component={NotFound} />
           </Switch>
         </main>
