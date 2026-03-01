@@ -78,7 +78,7 @@ export const VanPricing = [
     weekFree: "6 799 kr",
     month: "15 999 kr",
     extraPerKm: "5,0 kr",
-    selfRisk: "140 kr"
+    selfRisk: "150 kr"
   },
   {
     name: "Lastbil 2",
@@ -91,7 +91,7 @@ export const VanPricing = [
     weekFree: "9 999 kr",
     month: "20 199 kr",
     extraPerKm: "6,0 kr",
-    selfRisk: "140 kr"
+    selfRisk: "150 kr"
   },
   {
     name: "Lastbil 3",
@@ -104,7 +104,7 @@ export const VanPricing = [
     weekFree: "12 999 kr",
     month: "26 259 kr",
     extraPerKm: "7,5 kr",
-    selfRisk: "140 kr"
+    selfRisk: "150 kr"
   },
   {
     name: "Lastbil 2 + släp",
