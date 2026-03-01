@@ -253,8 +253,8 @@ export const RentalPricing = {
     {
       period: "Självriskreducering",
       plan: null,
-      car: "100 kr",
-      van: "140 kr"
+      car: "110 kr",
+      van: "150 kr"
     }
   ],
   footerText: "Alla priser är inklusive moms. Självrisk 5000 kr."
