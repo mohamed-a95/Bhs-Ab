@@ -223,8 +223,7 @@ const VanPriceTable = () => {
           <br />
           • B-körkort gäller för alla fordon utom Lastbil 2 + släp som kräver
           BE-körkort.
-          <br />• Avbokning ska göras minst 48 timmar innan bokad tid för att
-          undvika avgift.
+          <br />• Avbokning ska göras minst 48 timmar innan bokad tid, annars debiteras hela beloppet.
         </p>
       </div>
     </>
