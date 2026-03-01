@@ -58,7 +58,7 @@ const Priser = () => {
                 <p className="text-neutral-600">
                   Vid avbokning mer än 48 timmar före bokad tid återbetalas hela
                   beloppet förutom bokningsavgiften. Vid senare avbokning
-                  debiteras 50% av den totala kostnaden.
+                  debiteras hela beloppet.
                 </p>
               </div>
 
