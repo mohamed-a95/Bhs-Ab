@@ -257,5 +257,5 @@ export const RentalPricing = {
       van: "140 kr"
     }
   ],
-  footerText: "Alla priser är inklusive moms. Självrisk 4000 kr."
+  footerText: "Alla priser är inklusive moms. Självrisk 5000 kr."
 };
