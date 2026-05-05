@@ -188,13 +188,13 @@ const VanPriceTable = () => {
                 Självriskreducering
               </TableCell>
               <TableCell className="py-3 md:py-4 px-2 md:px-6 text-center font-bold text-primary text-sm md:text-base">
-                140 kr
+                150 kr
               </TableCell>
               <TableCell className="py-3 md:py-4 px-2 md:px-6 text-center font-bold text-primary text-sm md:text-base">
-                140 kr
+                150 kr
               </TableCell>
               <TableCell className="py-3 md:py-4 px-2 md:px-6 text-center font-bold text-primary text-sm md:text-base">
-                140 kr
+                150 kr
               </TableCell>
               <TableCell className="py-3 md:py-4 px-2 md:px-6 text-center font-bold text-primary text-sm md:text-base">
                 195 kr
