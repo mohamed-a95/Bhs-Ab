@@ -257,5 +257,5 @@ export const RentalPricing = {
       van: "150 kr"
     }
   ],
-  footerText: "Alla priser är inklusive moms. Självrisk 5000 kr."
+  footerText: "Alla priser är inklusive moms. Självrisk 5000 kr. För automatisk minibuss tillkommer 200 kr per dygn"
 };
